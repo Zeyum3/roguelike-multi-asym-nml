@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a1ef9d582d1f0eb4f9da85f9938d8758
+guid: b958f1293a27c74449820e584f3e20b2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6429493399158520243
-    second: Blue_0
+      213: -2962202036353051780
+    second: YellowPrincess_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blue_0
+      name: YellowPrincess_0
       rect:
         serializedVersion: 2
-        x: 256
+        x: 247
         y: 159
-        width: 566
-        height: 802
+        width: 585
+        height: 812
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d46007181d9d5c6a0800000000000000
-      internalID: -6429493399158520243
+      spriteID: c73dc3e31f424e6d0800000000000000
+      internalID: -2962202036353051780
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Blue_0: -6429493399158520243
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
