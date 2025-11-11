@@ -1,35 +1,38 @@
-using Unity.Netcode;
+﻿using Unity.Netcode;
 using UnityEngine;
 
 public class NetworkUI : MonoBehaviour
 {
+    private NetworkManager netMgr;
+
+    void Start()
+    {
+        netMgr = NetworkManager.Singleton;
+        if (netMgr == null)
+            Debug.LogError("⚠️ Aucun NetworkManager trouvé dans la scène !");
+    }
+
     void OnGUI()
     {
+        if (netMgr == null) return; // évite le crash
+
         GUILayout.BeginArea(new Rect(10, 10, 300, 200));
 
-        if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
+        if (!netMgr.IsClient && !netMgr.IsServer)
         {
             if (GUILayout.Button("Start Host"))
-            {
-                NetworkManager.Singleton.StartHost();
-            }
+                netMgr.StartHost();
 
             if (GUILayout.Button("Start Server"))
-            {
-                NetworkManager.Singleton.StartServer();
-            }
+                netMgr.StartServer();
 
             if (GUILayout.Button("Start Client"))
-            {
-                NetworkManager.Singleton.StartClient();
-            }
+                netMgr.StartClient();
         }
         else
         {
             if (GUILayout.Button("Shutdown"))
-            {
-                NetworkManager.Singleton.Shutdown();
-            }
+                netMgr.Shutdown();
         }
 
         GUILayout.EndArea();
