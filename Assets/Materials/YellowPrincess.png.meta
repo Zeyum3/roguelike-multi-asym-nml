@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      YellowPrincess_0: -2962202036353051780
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
