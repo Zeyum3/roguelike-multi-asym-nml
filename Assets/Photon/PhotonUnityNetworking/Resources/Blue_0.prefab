@@ -139,6 +139,12 @@ MonoBehaviour:
   movSpeed: 15
   view: {fileID: 1267662929419625397}
   playerCam: {fileID: 6445392213851377691}
+  interactRadius: 2
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 1
+  amount: 1
+  interactionDuration: 2
 --- !u!70 &1245313547603501004
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

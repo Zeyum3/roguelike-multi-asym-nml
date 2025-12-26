@@ -76,7 +76,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -388,7 +388,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -397,7 +397,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Robe_3_0: -2475858014352612719
+      Robe_3_1: 1663946971338735116
+      Robe_3_10: -7689075643543362853
+      Robe_3_2: -1147089399410427917
+      Robe_3_3: -1799443678928519073
+      Robe_3_4: 3784363339680129900
+      Robe_3_5: 8471173459811882718
+      Robe_3_6: 2690914948826057973
+      Robe_3_7: -3053511380283915927
+      Robe_3_8: 6812598974280039888
+      Robe_3_9: 5804082902016326104
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

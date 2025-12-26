@@ -15,6 +15,7 @@ public class ChangeRole : MonoBehaviour
             Debug.Log("Princess");
             newSprite = playerSprites[1];
             gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+            gameObject.GetComponent<PlayerCtrl>().amount = 1;
         }
 
         if (collision.gameObject.tag == "ChangeToSeeker")
@@ -22,6 +23,7 @@ public class ChangeRole : MonoBehaviour
             Debug.Log("Seeker");
             newSprite = playerSprites[0];
             gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+            gameObject.GetComponent<PlayerCtrl>().amount = -1;
         }
     }
 }
