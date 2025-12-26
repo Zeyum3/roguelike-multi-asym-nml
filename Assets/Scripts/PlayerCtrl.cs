@@ -2,6 +2,7 @@ using UnityEngine;
 using Photon;
 using Photon.Pun;
 using System.Threading;
+using UnityEngine.UI;
 public class PlayerCtrl : MonoBehaviour
 {
     public float movSpeed;
@@ -14,6 +15,9 @@ public class PlayerCtrl : MonoBehaviour
     public int amount;
     public float interactionDuration = 2f;
     float interactTimer;
+    public Image fillTimer;
+    public GameObject containerTimer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,7 +45,9 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E))
         {
+            containerTimer.SetActive(true);
             interactTimer -= Time.deltaTime;
+            fillTimer.fillAmount = interactTimer/interactionDuration;
             if (interactTimer > 0) return;
             interactTimer = interactionDuration;
 
@@ -53,6 +59,12 @@ public class PlayerCtrl : MonoBehaviour
                     c.GetComponent<DamageItem>().ModifyState(amount);
                 }
             }
+        }
+        else
+        {
+            containerTimer.SetActive(false);
+            interactTimer = interactionDuration;
+            fillTimer.fillAmount = interactTimer / interactionDuration;
         }
     }
 }
