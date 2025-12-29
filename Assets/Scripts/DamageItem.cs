@@ -26,6 +26,18 @@ public class DamageItem : MonoBehaviour
     {
         ownerID = authID;
         isTaken = newIsTaken;
+
+        if(ownerID == 0)
+        {
+            transform.parent = null;
+        }
+        else
+        {
+            var v = PhotonView.Find(ownerID);
+            if (v == null) return;
+
+            transform.parent= v.transform;
+        }
     }
 
     public void ModifyState(int amount)

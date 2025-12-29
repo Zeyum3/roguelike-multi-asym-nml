@@ -71,7 +71,7 @@ public class PlayerCtrl : MonoBehaviour
     }
     private void Grab(DamageItem item)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && gameObject.CompareTag("Seeker"))
         {
             if (heldItem != null)
             {
