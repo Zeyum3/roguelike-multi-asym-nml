@@ -17,6 +17,7 @@ public class PlayerCtrl : MonoBehaviour
     float interactTimer;
     public Image fillTimer;
     public GameObject containerTimer;
+    DamageItem heldItem;
 
     void Start()
     {
@@ -43,24 +44,61 @@ public class PlayerCtrl : MonoBehaviour
     }
     private void Interact()
     {
+        
+        
+        var result = Physics2D.OverlapCircleAll(transform.position, interactRadius, interactMask);
+        foreach (var c in result)
+        {
+            if (!c.GetComponent<DamageItem>()) continue;
+            var item = c.GetComponent<DamageItem>();
+            if (item.canGrab)
+            {
+                Grab(item);
+            }
+            else
+            {
+                ChangeItemState(item);
+            }
+            
+        }
+        
+            
+        
+    }
+    private void Grab(DamageItem item)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (heldItem != null)
+            {
+                if (heldItem.Take(view))
+                {
+                    heldItem = null;
+                }
+            }
+            else
+            {               
+                if (item.Take(view))
+                {
+                    heldItem = item;
+                }
+            }
+            
+        }
+        
+    }
+    private void ChangeItemState(DamageItem item)
+    {
         if (Input.GetKey(KeyCode.E))
         {
             containerTimer.SetActive(true);
             interactTimer -= Time.deltaTime;
-            fillTimer.fillAmount = interactTimer/interactionDuration;
+            fillTimer.fillAmount = interactTimer / interactionDuration;
             if (interactTimer > 0) return;
             interactTimer = interactionDuration;
-
-            var result = Physics2D.OverlapCircleAll(transform.position, interactRadius, interactMask);
-            foreach (var c in result) 
-            {
-                if (c.GetComponent<DamageItem>())
-                {
-                    c.GetComponent<DamageItem>().ModifyState(amount);
-                }
-            }
+            item.ModifyState(amount);
         }
-        else
+        else 
         {
             containerTimer.SetActive(false);
             interactTimer = interactionDuration;
