@@ -16,13 +16,17 @@ public class PlayerCtrl : MonoBehaviour
     public float interactionDuration = 2f;
     float interactTimer;
     public Image fillTimer;
-    public GameObject containerTimer;
+    public GameObject containerTimer, containerUI;
     DamageItem heldItem;
+    public Role[] roles;
+    public SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerCam.enabled = view.IsMine;
+        containerUI.SetActive(view.IsMine);
+        rb.simulated = view.IsMine;
         interactTimer = interactionDuration;
     }
 
@@ -105,4 +109,25 @@ public class PlayerCtrl : MonoBehaviour
             fillTimer.fillAmount = interactTimer / interactionDuration;
         }
     }
+
+    public void RoleChange(int roleIndex)
+    {
+        view.RPC("UpdateRole", RpcTarget.AllBuffered, roleIndex);
+    }
+
+    [PunRPC]
+    void UpdateRole(int roleIndex)
+    {
+        spriteRenderer.sprite = roles[roleIndex].newSprite;
+        amount = roles[roleIndex].amount;
+        gameObject.tag = roles[roleIndex].roleTag;
+    }
+}
+
+[System.Serializable]
+public struct Role 
+{
+    public string roleTag;
+    public Sprite newSprite;
+    public int amount;
 }

@@ -2,28 +2,11 @@ using UnityEngine;
 
 public class ChangeRole : MonoBehaviour
 {
-    [SerializeField] Sprite[] playerSprites;
-    private Sprite newSprite;
+    public int newRole;
     
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-
-        if (collision.gameObject.tag == "ChangeToPrincess")
-        {
-            Debug.Log("Princess");
-            newSprite = playerSprites[1];
-            gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
-            gameObject.GetComponent<PlayerCtrl>().amount = 1;
-        }
-
-        if (collision.gameObject.tag == "ChangeToSeeker")
-        {
-            Debug.Log("Seeker");
-            newSprite = playerSprites[0];
-            gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
-            gameObject.GetComponent<PlayerCtrl>().amount = -1;
-        }
+        collision.gameObject.GetComponent<PlayerCtrl>().RoleChange(newRole);
     }
 }

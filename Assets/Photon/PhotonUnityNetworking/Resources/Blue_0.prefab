@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5709655157438140408}
   - component: {fileID: 334890579680100396}
   - component: {fileID: 1245313547603501004}
-  - component: {fileID: 8990772864221298588}
   - component: {fileID: 1267662929419625397}
   - component: {fileID: 3753846849584698594}
   m_Layer: 0
@@ -148,6 +147,15 @@ MonoBehaviour:
   interactionDuration: 2
   fillTimer: {fileID: 7618290221785515459}
   containerTimer: {fileID: 8481583821496352040}
+  containerUI: {fileID: 2734625505710373120}
+  roles:
+  - roleTag: Seeker
+    newSprite: {fileID: -6429493399158520243, guid: a1ef9d582d1f0eb4f9da85f9938d8758, type: 3}
+    amount: -1
+  - roleTag: Princess
+    newSprite: {fileID: -2962202036353051780, guid: b958f1293a27c74449820e584f3e20b2, type: 3}
+    amount: 1
+  spriteRenderer: {fileID: 2846066631013374260}
 --- !u!70 &1245313547603501004
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -185,21 +193,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 5.66, y: 8.02}
   m_Direction: 0
---- !u!114 &8990772864221298588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79635305247438440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d7e173209cc08d48a4f300dff45c407, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprites:
-  - {fileID: -6429493399158520243, guid: a1ef9d582d1f0eb4f9da85f9938d8758, type: 3}
-  - {fileID: -2962202036353051780, guid: b958f1293a27c74449820e584f3e20b2, type: 3}
 --- !u!114 &1267662929419625397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,7 +636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5580792892166192930
 RectTransform:
   m_ObjectHideFlags: 0

@@ -179,13 +179,18 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 9171313439962082576, guid: fbf52203cd3f9484d85d93b5e0b53df9, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171313439962082576, guid: fbf52203cd3f9484d85d93b5e0b53df9, type: 3}
+      propertyPath: 'ObservedComponents.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6130525281039269369, guid: fbf52203cd3f9484d85d93b5e0b53df9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1279776102}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf52203cd3f9484d85d93b5e0b53df9, type: 3}
 --- !u!1 &274476298
 GameObject:
@@ -324,48 +329,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!1 &311087226 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8482299390644849584, guid: 0274a944493234d4ea230529a454c8e6, type: 3}
-  m_PrefabInstance: {fileID: 674948068}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &311087232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311087226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: PhotonUnityNetworking::Photon.Pun.PhotonTransformView
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
---- !u!1 &563930577 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2330991007440810915, guid: eebdf320c01f1174fa0af7319b66fbea, type: 3}
-  m_PrefabInstance: {fileID: 738309261}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &563930583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563930577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: PhotonUnityNetworking::Photon.Pun.PhotonTransformView
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1001 &674948068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -429,10 +392,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8482299390644849584, guid: 0274a944493234d4ea230529a454c8e6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 311087232}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0274a944493234d4ea230529a454c8e6, type: 3}
 --- !u!1001 &738309261
 PrefabInstance:
@@ -497,10 +457,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2330991007440810915, guid: eebdf320c01f1174fa0af7319b66fbea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 563930583}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebdf320c01f1174fa0af7319b66fbea, type: 3}
 --- !u!1 &753151121
 GameObject:
@@ -514,6 +471,7 @@ GameObject:
   - component: {fileID: 753151124}
   - component: {fileID: 753151123}
   - component: {fileID: 753151122}
+  - component: {fileID: 753151126}
   m_Layer: 0
   m_Name: ChangeRoleSeeker
   m_TagString: ChangeToSeeker
@@ -667,6 +625,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &753151126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753151121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7e173209cc08d48a4f300dff45c407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeRole
+  newRole: 0
 --- !u!1001 &790825406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -730,32 +701,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7434877134158692484, guid: f299297d26923e44b8187443ebe1f399, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1298688307}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f299297d26923e44b8187443ebe1f399, type: 3}
---- !u!1 &1064720693 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2228563351001692349, guid: 9e39fae981bc78841b23544354863d43, type: 3}
-  m_PrefabInstance: {fileID: 1662045571}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1064720699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064720693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: PhotonUnityNetworking::Photon.Pun.PhotonTransformView
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &1121227428
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,48 +832,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1279776096 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6130525281039269369, guid: fbf52203cd3f9484d85d93b5e0b53df9, type: 3}
-  m_PrefabInstance: {fileID: 138974967}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1279776102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279776096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: PhotonUnityNetworking::Photon.Pun.PhotonTransformView
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
---- !u!1 &1298688301 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7434877134158692484, guid: f299297d26923e44b8187443ebe1f399, type: 3}
-  m_PrefabInstance: {fileID: 790825406}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1298688307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298688301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: PhotonUnityNetworking::Photon.Pun.PhotonTransformView
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &1312338137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,13 +940,18 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8603142313060367746, guid: 595d9f015a39b954d8496a3341ab8f2e, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8603142313060367746, guid: 595d9f015a39b954d8496a3341ab8f2e, type: 3}
+      propertyPath: 'ObservedComponents.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6497771560215401692, guid: 595d9f015a39b954d8496a3341ab8f2e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1708259486}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595d9f015a39b954d8496a3341ab8f2e, type: 3}
 --- !u!1 &1440945641
 GameObject:
@@ -1055,6 +965,7 @@ GameObject:
   - component: {fileID: 1440945644}
   - component: {fileID: 1440945643}
   - component: {fileID: 1440945642}
+  - component: {fileID: 1440945646}
   m_Layer: 0
   m_Name: ChangeRolePrincess
   m_TagString: ChangeToPrincess
@@ -1208,6 +1119,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1440945646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440945641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7e173209cc08d48a4f300dff45c407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeRole
+  newRole: 1
 --- !u!1001 &1662045571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1271,53 +1195,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2228563351001692349, guid: 9e39fae981bc78841b23544354863d43, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1064720699}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e39fae981bc78841b23544354863d43, type: 3}
---- !u!1 &1708259480 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6497771560215401692, guid: 595d9f015a39b954d8496a3341ab8f2e, type: 3}
-  m_PrefabInstance: {fileID: 1398495018}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1708259486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708259480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: PhotonUnityNetworking::Photon.Pun.PhotonTransformView
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
---- !u!1 &1766782805 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6130525281039269369, guid: fbf52203cd3f9484d85d93b5e0b53df9, type: 3}
-  m_PrefabInstance: {fileID: 1875120967}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1766782811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766782805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: PhotonUnityNetworking::Photon.Pun.PhotonTransformView
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &1806089657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,10 +1305,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6130525281039269369, guid: fbf52203cd3f9484d85d93b5e0b53df9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1766782811}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf52203cd3f9484d85d93b5e0b53df9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -1437,8 +1313,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 274476301}
   - {fileID: 1121227430}
-  - {fileID: 1440945645}
   - {fileID: 1806089659}
+  - {fileID: 1440945645}
   - {fileID: 753151125}
   - {fileID: 1312338139}
   - {fileID: 1398495018}
