@@ -156,6 +156,9 @@ MonoBehaviour:
     newSprite: {fileID: -2962202036353051780, guid: b958f1293a27c74449820e584f3e20b2, type: 3}
     amount: 1
   spriteRenderer: {fileID: 2846066631013374260}
+  walkspeed: 15
+  slowspeed: 5
+  durationslow: 5
 --- !u!70 &1245313547603501004
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

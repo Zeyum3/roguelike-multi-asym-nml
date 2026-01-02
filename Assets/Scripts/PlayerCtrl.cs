@@ -20,6 +20,9 @@ public class PlayerCtrl : MonoBehaviour
     DamageItem heldItem;
     public Role[] roles;
     public SpriteRenderer spriteRenderer;
+    public float walkspeed;
+    public float slowspeed;
+    public float durationslow;
 
     void Start()
     {
@@ -38,13 +41,22 @@ public class PlayerCtrl : MonoBehaviour
             Move();
             Interact();
         }
-            
+
     }
     private void Move()
-        {
+    {
         speedX = Input.GetAxisRaw("Horizontal") * movSpeed;
         speedY = Input.GetAxisRaw("Vertical") * movSpeed;
         rb.linearVelocity = new Vector2(speedX, speedY);
+    }
+    public void Slow()
+    {
+        movSpeed = slowspeed;
+        Invoke("Endslow", durationslow);
+    }
+    private void Endslow()
+    {
+        movSpeed = walkspeed;
     }
     private void Interact()
     {
@@ -65,9 +77,14 @@ public class PlayerCtrl : MonoBehaviour
             }
             
         }
-        
-            
-        
+
+        if (Input.GetKeyDown(KeyCode.T) && gameObject.CompareTag("Princess"))
+        {
+            PhotonNetwork.Instantiate("Trap", transform.position, Quaternion.identity);
+        }
+
+
+
     }
     private void Grab(DamageItem item)
     {
